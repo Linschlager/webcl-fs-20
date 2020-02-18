@@ -71,7 +71,7 @@ const TodoItemsView = (todoController, rootElement) => {
             template.innerHTML = `
                 <button class="delete">&times;</button>
                 <input type="text" size="42">
-                <input type="checkbox">            
+                <input type="checkbox">
             `;
             return template.children;
         }

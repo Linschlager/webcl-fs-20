@@ -4,8 +4,8 @@ body {
 
     /* Color Codes from: https://uxplanet.org/neumorphism-in-user-interface-tutorial-c353698ac5c0 */
     --area: #E0E5EC;
-    --light-shadow: rgba(255,255,255, 0.5);
-    --dark-shadow: rgba(163,177,198,0.6);
+    --light-shadow: #FFF;
+    --dark-shadow: #A8ACB1;
 
     background-color: var(--area);
 }
@@ -14,11 +14,11 @@ main {
     margin:     auto;
     padding:    2em;
 
+    border-radius: 10px;
     background-color: #E0E5EC;
-    box-shadow: 9px 9px 16px var(--dark-shadow), -9px -9px 16px var(--light-shadow);
+    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
 }
 h1 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
 }
 .holder {
@@ -26,42 +26,56 @@ h1 {
 }
 
 input[type=text] {
+    font-size: 1.2em;
+    border-width: 0;
+    width: 450px;
 
-    font-family:    "Comic Sans MS", cursive, sans-serif;
-    font-size:      1.1em;
-    border-width:   0 0 1px 0;
-
-    background-color: #E0E5EC;
-    box-shadow: 9px 9px 16px var(--dark-shadow), -9px -9px 16px var(--light-shadow);
-
+    background: var(--area);
+    box-shadow: 20px 20px 40px var(--dark-shadow);
     padding: 10px;
-    border-radius: 25px;
+}
+
+input[type=text]:focus, button:focus, #plus:focus, #fortune:focus {
+    box-shadow: inset 10px 10px 20px var(--dark-shadow),
+                inset -10px -10px 20px var(--light-shadow);
+    outline: transparent none 0;
 }
 
 input[type=checkbox] {
-    margin: 30px 20px 20px;
+    margin-top: 25px;
+    margin-left: 0;
 }
 
-input[type=text]:focus {
-    border-color:   orange;
-    outline:        transparent none 0;
+/* Hack to make checkboxes stylable */
+input[type=checkbox]::before {
+    content: '✗';
+    background: var(--area);
+    box-shadow: 20px 20px 40px var(--dark-shadow);, -20px -20px 40px var(--light-shadow);
+    padding: 16px;
+
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
+input[type=checkbox]:checked::before {
+    content: '✓';
+    box-shadow: inset 10px 10px 20px var(--dark-shadow), inset -10px -10px 20px var(--light-shadow);
+ }
+
 #todoContainer {
-    display:        grid;
-    grid-column-gap: 0.5em;
-    grid-template-columns: 1.7em auto auto;
-    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 #todoContainer button, #todoContainer input[type=text] {
     margin-top: 10px;
 }
 #plus, #fortune {
     border: 0;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
 
-    background-color: #E0E5EC;
-    box-shadow: 9px 9px 16px var(--dark-shadow), -9px -9px 16px var(--light-shadow);
+    border-radius: 10px;
+    background: var(--area);
+    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
 }
 
 .delete {
@@ -70,13 +84,19 @@ input[type=text]:focus {
     color: red;
     font-size: 1.3em;
 
-    .box-shadow: 9px 9px 16px var(--dark-shadow), -9px -9px 16px var(--light-shadow);
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 10px;
+
+    background: var(--area);
+    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
 }
 
 div:nth-of-type(2), div:nth-of-type(3) {
     padding: 10px;
     margin-top: 20px;
 
-    background-color: #E0E5EC;
-    box-shadow: 9px 9px 16px var(--dark-shadow), -9px -9px 16px var(--light-shadow);
+    border-radius: 5px;
+    background: var(--area);
+    box-shadow:  inset 5px 5px 10px var(--dark-shadow);
 }
