@@ -28,7 +28,7 @@ h1 {
 input[type=text] {
     font-size: 1.2em;
     border-width: 0;
-    width: 450px;
+    width: calc(100% - 95px); /* Scale with space  */
 
     background: var(--area);
     box-shadow: 20px 20px 40px var(--dark-shadow);
