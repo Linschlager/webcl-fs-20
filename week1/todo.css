@@ -13,8 +13,8 @@ body {
     --box-shadow-topleft: -20px -20px 40px var(--light-shadow);
     --box-shadow-botright: 20px 20px 40px var(--dark-shadow);
     /* Inside Shadow to simulate lower down elements. Inverted outside coloring */
-    --box-shadow-inside-topleft: inset 10px 10px 20px var(--dark-shadow);
-    --box-shadow-inside-botright: inset -10px -10px 20px var(--light-shadow);
+    --box-shadow-inside-topleft: inset 10px 10px 10px var(--dark-shadow);
+    --box-shadow-inside-botright: inset -10px -10px 10px var(--light-shadow);
 
     background-color: var(--area);
 }
@@ -45,8 +45,7 @@ input[type=text] {
 }
 
 input[type=text]:focus, button:active, #plus:active, #fortune:active {
-    box-shadow: var(--box-shadow-inside-botright),
-                var(--box-shadow-inside-topleft);
+    box-shadow: var(--box-shadow-inside-topleft);
 }
 
 input[type=text]:focus, button:focus, #plus:focus, #fortune:focus {
