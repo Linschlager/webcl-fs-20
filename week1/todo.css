@@ -6,7 +6,17 @@ body {
     --area: #E0E5EC;
     --light-shadow: #FFF;
     --dark-shadow: #A8ACB1;
+
+    /*§*/
     --border-radius: 5px;
+
+    /* Outside Shadows: topleft light, botright dark */
+    --box-shadow-topleft: -20px -20px 40px var(--light-shadow);
+    --box-shadow-botright: 20px 20px 40px var(--dark-shadow);
+    /* Inside Shadow to simulate lower down elements. Inverted outside coloring */
+    --box-shadow-inside-topleft: inset 10px 10px 20px var(--dark-shadow);
+    --box-shadow-inside-botright: inset -10px -10px 20px var(--light-shadow);
+
     background-color: var(--area);
 }
 main {
@@ -16,7 +26,7 @@ main {
 
     border-radius: 10px;
     background-color: #E0E5EC;
-    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
+    box-shadow: var(--box-shadow-botright), var(--box-shadow-topleft);
 }
 h1 {
     text-align: center;
@@ -31,13 +41,13 @@ input[type=text] {
     width: calc(100% - 95px); /* Scale with space  */
 
     background: var(--area);
-    box-shadow: 20px 20px 40px var(--dark-shadow);
+    box-shadow: var(--box-shadow-botright);
     padding: 10px;
 }
 
 input[type=text]:focus, button:active, #plus:active, #fortune:active {
-    box-shadow: inset 10px 10px 20px var(--dark-shadow),
-                inset -10px -10px 20px var(--light-shadow);
+    box-shadow: var(--box-shadow-inside-botright),
+                var(--box-shadow-inside-topleft);
 }
 
 input[type=text]:focus, button:focus, #plus:focus, #fortune:focus {
@@ -53,7 +63,7 @@ input[type=checkbox] {
 input[type=checkbox]::before {
     content: '\25A1';
     background: var(--area);
-    box-shadow: 20px 20px 40px var(--dark-shadow);, -20px -20px 40px var(--light-shadow);
+    box-shadow: var(--box-shadow-botright);
     padding: 16px;
 
     border-bottom-right-radius: var(--border-radius);
@@ -61,7 +71,7 @@ input[type=checkbox]::before {
 }
 input[type=checkbox]:checked::before {
     content: '\25A3';
-    box-shadow: inset 10px 10px 20px var(--dark-shadow), inset -10px -10px 20px var(--light-shadow);
+    box-shadow: var(--box-shadow-inside-topleft), var(--box-shadow-inside-botright);
  }
 
 #todoContainer {
@@ -79,7 +89,7 @@ input[type=checkbox]:checked::before {
 
     border-radius: var(--border-radius);
     background: var(--area);
-    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
+    box-shadow: var(--box-shadow-botright), var(--box-shadow-topleft);
 }
 
 .delete {
@@ -93,7 +103,7 @@ input[type=checkbox]:checked::before {
     padding: 10px;
 
     background: var(--area);
-    box-shadow: 20px 20px 40px var(--dark-shadow), -20px -20px 40px var(--light-shadow);
+    box-shadow: var(--box-shadow-botright), var(--box-shadow-topleft);
 }
 
 div:nth-of-type(2), div:nth-of-type(3) {
@@ -102,5 +112,5 @@ div:nth-of-type(2), div:nth-of-type(3) {
 
     border-radius: var(--border-radius);
     background: var(--area);
-    box-shadow:  inset 5px 5px 10px var(--dark-shadow);
+    box-shadow:  var(--box-shadow-inside-topleft);
 }
