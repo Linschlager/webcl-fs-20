@@ -10,7 +10,7 @@ body {
     /*§*/
     --border-radius: 5px;
 
-    /* Outside Shadows: topleft light, botright dark */
+    /* Outside Shadows: top-left light, bottom-right dark */
     --box-shadow-topleft: -20px -20px 40px var(--light-shadow);
     --box-shadow-botright: 20px 20px 40px var(--dark-shadow);
     /* Inside Shadow to simulate lower down elements. Inverted outside coloring */
