@@ -35,20 +35,23 @@ input[type=text] {
     padding: 10px;
 }
 
-input[type=text]:focus, button:focus, #plus:focus, #fortune:focus {
+input[type=text]:focus, button:active, #plus:active, #fortune:active {
     box-shadow: inset 10px 10px 20px var(--dark-shadow),
                 inset -10px -10px 20px var(--light-shadow);
+}
+
+input[type=text]:focus, button:focus, #plus:focus, #fortune:focus {
     outline: transparent none 0;
 }
 
 input[type=checkbox] {
-    margin-top: 25px;
+    margin-top: 26px;
     margin-left: 0;
 }
 
 /* Hack to make checkboxes stylable */
 input[type=checkbox]::before {
-    content: '\2717';
+    content: '\25A1';
     background: var(--area);
     box-shadow: 20px 20px 40px var(--dark-shadow);, -20px -20px 40px var(--light-shadow);
     padding: 16px;
@@ -57,7 +60,7 @@ input[type=checkbox]::before {
     border-top-right-radius: var(--border-radius);
 }
 input[type=checkbox]:checked::before {
-    content: '\2713';
+    content: '\25A3';
     box-shadow: inset 10px 10px 20px var(--dark-shadow), inset -10px -10px 20px var(--light-shadow);
  }
 
@@ -67,6 +70,7 @@ input[type=checkbox]:checked::before {
 }
 #todoContainer button, #todoContainer input[type=text] {
     margin-top: 10px;
+    padding-top: 11px;
 }
 #plus, #fortune {
     border: 0;
